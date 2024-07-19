@@ -1,6 +1,4 @@
-from aes import encrypt_cbc_pkcs7, encrypt_cbc_pkcs5,encrypt_cbc_zero
-
-from aes import decrypt_cbc_pkcs7,decrypt_cbc_pkcs5,decrypt_cbc_zero
+from des3 import *
 
 if __name__ == '__main__':
     plain_text = """{
@@ -8,9 +6,9 @@ if __name__ == '__main__':
   "msg" : "success",
   "data" : [ ]
 }"""
-    aes_cbc_pkcs7_key = "7Y6MJwziQwHmfRGck6xEZw=="
-    aes_cbc_pkcs7_iv = "^S&mm@w5^#C2008J"
-    data = encrypt_cbc_zero(plain_text,aes_cbc_pkcs7_key,aes_cbc_pkcs7_iv)
+    aes_cbc_pkcs7_key = "123456789012345678901234"
+    aes_cbc_pkcs7_iv = "87654321"
+    data = encrypt_3des_cbc_pkcs7(plain_text,aes_cbc_pkcs7_key,aes_cbc_pkcs7_iv)
     print(data)
-    data = decrypt_cbc_zero(data,aes_cbc_pkcs7_key,aes_cbc_pkcs7_iv)
+    data = decrypt_3des_cbc_pkcs7(data,aes_cbc_pkcs7_key,aes_cbc_pkcs7_iv)
     print(data)

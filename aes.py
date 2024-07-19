@@ -4,7 +4,7 @@ from Crypto.Util.Padding import pad, unpad
 
 
 # aes cbc pkcs7 解密数据
-def decrypt_cbc_pkcs7(encoded_text: str, aes_cbc_pkcs7_key: str, aes_cbc_pkcs7_iv: str) -> str:
+def decrypt_aes_cbc_pkcs7(encoded_text: str, aes_cbc_pkcs7_key: str, aes_cbc_pkcs7_iv: str) -> str:
     '''
     :param encoded_text: 需要解密的密文（base64编码）
     :param aes_cbc_pkcs7_key: AES密钥
@@ -31,7 +31,7 @@ def decrypt_cbc_pkcs7(encoded_text: str, aes_cbc_pkcs7_key: str, aes_cbc_pkcs7_i
 
 
 # aes cbc pkcs7 加密数据
-def encrypt_cbc_pkcs7(plain_text: str, aes_cbc_pkcs7_key: str, aes_cbc_pkcs7_iv: str) -> str:
+def encrypt_aes_cbc_pkcs7(plain_text: str, aes_cbc_pkcs7_key: str, aes_cbc_pkcs7_iv: str) -> str:
     '''
     :param plain_text: 需要加密的明文
     :param aes_cbc_pkcs7_key: AES密钥
@@ -58,7 +58,7 @@ def encrypt_cbc_pkcs7(plain_text: str, aes_cbc_pkcs7_key: str, aes_cbc_pkcs7_iv:
 
 
 # aes cbc pkcs5 解密数据
-def encrypt_cbc_pkcs5(plaintext: str, aes_cbc_pkcs5_key: str, aes_cbc_pkcs5_iv: str) -> str:
+def encrypt_aes_cbc_pkcs5(plaintext: str, aes_cbc_pkcs5_key: str, aes_cbc_pkcs5_iv: str) -> str:
     '''
     :param plaintext: 需要加密的明文
     :param key: AES密钥
@@ -74,7 +74,7 @@ def encrypt_cbc_pkcs5(plaintext: str, aes_cbc_pkcs5_key: str, aes_cbc_pkcs5_iv: 
 
 
 # aes cbc pkcs5 加密数据
-def decrypt_cbc_pkcs5(encoded_text: str, aes_cbc_pkcs5_key: str, aes_cbc_pkcs5_iv: str) -> str:
+def decrypt_aes_cbc_pkcs5(encoded_text: str, aes_cbc_pkcs5_key: str, aes_cbc_pkcs5_iv: str) -> str:
     '''
     :param encoded_text: 需要解密的密文（base64编码）
     :param key: AES密钥
@@ -110,7 +110,7 @@ def zero_unpad(data: bytes, block_size: int) -> bytes:
     return data.rstrip(b'\x00')
 
 
-def encrypt_cbc_zero(plain_text: str, aes_cbc_key: str, aes_cbc_iv: str) -> str:
+def encrypt_aes_cbc_zero(plain_text: str, aes_cbc_key: str, aes_cbc_iv: str) -> str:
     '''
     :param plain_text: 需要加密的明文
     :param aes_cbc_key: AES密钥
@@ -136,7 +136,7 @@ def encrypt_cbc_zero(plain_text: str, aes_cbc_key: str, aes_cbc_iv: str) -> str:
     return encoded_text
 
 
-def decrypt_cbc_zero(encoded_text: str, aes_cbc_key: str, aes_cbc_iv: str) -> str:
+def decrypt_aes_cbc_zero(encoded_text: str, aes_cbc_key: str, aes_cbc_iv: str) -> str:
     '''
     :param encoded_text: 需要解密的密文（Base64编码）
     :param aes_cbc_key: AES密钥
